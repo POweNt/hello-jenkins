@@ -1,21 +1,17 @@
 pipeline {
 	agent any
-
-	triggers {
-		pollSCM('* * * * *')
-	}
 	
 	stages {
 
-		stage('Build') {
+		stage('Compile') {
 			steps {
-				sh 'mvn clean compile'
+				sh 'javac Hello.java'
 			}
 		}
 	
 		stage('Run') {
 			steps {
-				sh 'java -cp target/classes Hello'
+				sh 'java Hello'
 			}
 		}	
 	}
