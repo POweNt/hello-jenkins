@@ -6,11 +6,6 @@ pipeline {
 	}
 	
 	stages {
-		stage('Checkout') {
-			steps {
-				git 'https://github.com/POweNt/hello-jenkins.git'
-			}	
-		}
 
 		stage('Build') {
 			steps {
